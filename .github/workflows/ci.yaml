@@ -27,5 +27,6 @@ jobs:
 
       - name: Deploy via GCS
         run: |
+          zip -r app.zip .
           gsutil -m rm -rf gs://github-action-test-1/* || echo "$?"
           gsutil -m cp -r * gs://github-action-test-1/
